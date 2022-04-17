@@ -1,5 +1,10 @@
 <script>
 export default {
+  data() {
+    return {
+      text: ""
+    }
+  },
   methods: {
     onTextChanged: function (e) {
       this.text = e.target.value
