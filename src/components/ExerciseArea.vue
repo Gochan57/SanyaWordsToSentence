@@ -17,10 +17,11 @@ export default {
     },
     splitTextToSentences: function (text) {
       // TODO split text to sentences
-      return [
-        'The first sentence',
-        'The second sentence',
-      ]
+      return text.split('.')
+      // return [
+      //   'The first sentence',
+      //   'The second sentence',
+      // ]
     },
     check: function () {
       let res = true

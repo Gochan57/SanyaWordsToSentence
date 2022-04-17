@@ -28,11 +28,17 @@ export default {
     },
     splitSentenceToWords: function (sentence) {
       // TODO split this.sentence to words with ids
-      return [
-        {value: 'Hello', id: 1},
-        {value: 'mr', id: 2},
-        {value: 'Sanya', id: 3},
-      ]
+      return sentence.trim().split(" ").map((word, i) => {
+        return {
+          value: word,
+          id: i
+        }
+      })
+      // return [
+      //   {value: 'Hello', id: 1},
+      //   {value: 'mr', id: 2},
+      //   {value: 'Sanya', id: 3},
+      // ]
     },
     onWordSelect: function (wordId) {
       this.selectedWordIds.push(wordId)
