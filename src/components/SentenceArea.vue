@@ -21,6 +21,11 @@ export default {
     },
   },
   methods: {
+    onNewSentence: function (sentence) {
+      this.words = this.splitSentenceToWords(sentence)
+      this.selectedWordIds = []
+      this.unselectedWordIds = this.words.map(word => word.id)
+    },
     splitSentenceToWords: function (sentence) {
       // TODO split this.sentence to words with ids
       return [
@@ -30,7 +35,6 @@ export default {
       ]
     },
     onWordSelect: function (wordId) {
-      console.log(`onWordSelect(${wordId})`)
       this.selectedWordIds.push(wordId)
       const indexToRemove = this.unselectedWordIds.indexOf(wordId)
       this.unselectedWordIds.splice(indexToRemove, 1)
@@ -41,16 +45,19 @@ export default {
       this.unselectedWordIds.push(wordId)
     },
     check: function () {
-      console.log(`check "${this.sentence}"`)
       if (this.unselectedWordIds.length) return false
       // TODO check if this.selectedWords together is the same as this.sentence
       return true
     }
   },
-  mounted() {
-    this.words = this.splitSentenceToWords(this.sentence)
-    this.unselectedWordIds = this.words.map(word => word.id)
+  watch: {
+    sentence(newSentence, oldSentence) {
+      this.onNewSentence(newSentence)
+    }
   },
+  mounted() {
+    this.onNewSentence(this.sentence)
+  }
 }
 </script>
 

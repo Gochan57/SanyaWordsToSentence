@@ -12,6 +12,9 @@ export default {
     }
   },
   methods: {
+    onNewText: function (text) {
+      this.sentences = this.splitTextToSentences(text)
+    },
     splitTextToSentences: function (text) {
       // TODO split text to sentences
       return [
@@ -28,9 +31,14 @@ export default {
       this.success = res
     }
   },
-  mounted() {
-    this.sentences = this.splitTextToSentences(this.text)
+  watch: {
+    text(newText, oldText) {
+      this.onNewText(newText)
+    }
   },
+  mounted() {
+    this.onNewText(this.text)
+  }
 }
 </script>
 
