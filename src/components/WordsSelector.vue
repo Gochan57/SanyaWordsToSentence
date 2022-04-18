@@ -13,19 +13,10 @@ export default {
 </script>
 
 <template>
-  <div class="words-container">
-    <div class="word-wrapper" v-for="word in words">
-      <Word :word="word" @tapped="onWordTapped"/>
-    </div>
+  <div class="tags are-medium">
+    <Word class="tag is-light" v-for="word in words" :word="word" @tapped="onWordTapped"/>
   </div>
 </template>
 
 <style scoped>
-.words-container {
-  display: flex;
-  margin-top: 10px;
-}
-.word-wrapper {
-  padding-right: 5px;
-}
 </style>

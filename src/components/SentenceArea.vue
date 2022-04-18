@@ -68,14 +68,11 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <SentenceAssembler :words="selectedWords" @tapped="onWordUnselect"/>
-    <WordsSelector :words="unselectedWords" @tapped="onWordSelect"/>
+  <div>
+    <SentenceAssembler class="block" :words="selectedWords" @tapped="onWordUnselect"/>
+    <WordsSelector class="block" :words="unselectedWords" @tapped="onWordSelect"/>
   </div>
 </template>
 
 <style scoped>
-.container {
-  margin-top: 20px;
-}
 </style>

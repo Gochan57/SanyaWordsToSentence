@@ -44,21 +44,18 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <SentenceArea v-for="(sentence) in sentences" :sentence="sentence" ref="sentences"/>
-    <div class="check-container">
-      <button class="button-check" @click="check">Check</button>
-      <span v-if="checked && success">Right!</span>
-      <span v-if="checked && !success">Wrong!</span>
+  <div class="section">
+    <SentenceArea class="block" v-for="(sentence) in sentences" :sentence="sentence" ref="sentences"/>
+    <div class="block">
+      <button class="button check-button is-primary" @click="check">Check</button>
+      <span class="tag is-large is-success" v-if="checked && success">Right!</span>
+      <span class="tag is-large is-danger" v-if="checked && !success">Wrong!</span>
     </div>
   </div>
 </template>
 
 <style scoped>
-.check-container {
-  margin-top: 30px;
-}
-.button-check {
+.check-button {
   margin-right: 10px;
 }
 </style>

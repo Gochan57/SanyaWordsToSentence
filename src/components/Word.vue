@@ -10,12 +10,8 @@ export default {
 </script>
 
 <template>
-  <span class="word" @click="onWordTapped(word)">{{word.value}}</span>
+  <span @click="onWordTapped(word)">{{word.value}}</span>
 </template>
 
 <style scoped>
-.word {
-  border: 1px solid black;
-  padding: 4px;
-}
 </style>

@@ -17,27 +17,20 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div>
+  <div class="section">
+    <div class="block">
         Put your text here and submit
     </div>
-    <div>
-      <textarea class="wide-textarea" rows="3" @change="onTextChanged">{{text}}</textarea>
+    <div class="block">
+      <textarea class="textarea wide-textarea" rows="3" @change="onTextChanged">{{text}}</textarea>
     </div>
-    <div>
-      <button @click="onSubmitButtonClicked">Submit</button>
+    <div class="block">
+      <button class="button is-primary" @click="onSubmitButtonClicked">Submit</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-container {
-
-}
-
-h3 {
-  font-size: 1.2rem;
-}
 
 .wide-textarea {
   width: 100%;
